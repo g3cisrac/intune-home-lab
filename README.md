@@ -18,3 +18,14 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 
 ![Lab faculty](02-lab-faculty.png)
 
+![lab test devies](03-lab-test-devices.png)
+
+![lab staff](04-lab-staff.png)
+
+## Mobility (MIM and WIP) - Enrolling a VM: How to enroll Windows 11
+
+![VM Setup](05-vm-setup.png)
+
+## One issue I ran into: I accidentally originally downloaded Windows 11 Home, not Pro. Home version does not support device mobility policies.
+## Register VM with Windows 11; on a Windows 11 Pro or Enterprise VM (the free evaluation ISO works), open Settings > Accounts > Access work or school > Connect > Join this device to Microsoft Entra ID, and signed in as a test user. 
+
