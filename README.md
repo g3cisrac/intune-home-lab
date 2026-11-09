@@ -12,3 +12,9 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 - Front Desk Test also received an Intune license (note on the screenshot)
 
 ![Test users](01-test-users.png)
+
+## Create groups and add each user to their corresponding group. 
+- Active groups + their members in screenshots:
+
+![Lab faculty] (02-lab-faculty.png)
+
