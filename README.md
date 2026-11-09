@@ -11,4 +11,4 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 - Created test users: Faculty Test, Front Desk Test, and Staff Test, plus my admin account
 - Front Desk Test also received an Intune license (note on the screenshot)
 
-![Test users](screenshots/01-test-users.png)
+![Test users](main/01-test-users.png)
