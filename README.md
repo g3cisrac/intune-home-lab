@@ -16,5 +16,5 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 ## Create groups and add each user to their corresponding group. 
 - Active groups + their members in screenshots:
 
-![Lab faculty] (02-lab-faculty.png)
+![Lab faculty](02-lab-faculty.png)
 
