@@ -12,7 +12,6 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 - Front Desk Test also received an Intune license (note on the screenshot)
 
 ![Test users](01-test-users.png)
-
 ## Create groups and add each user to their corresponding group. 
 - Active groups + their members in screenshots:
 
@@ -21,11 +20,59 @@ Home lab: Microsoft 365 and Intune administration (users, licensing, device enro
 ![lab test devies](03-lab-test-devices.png)
 
 ![lab staff](04-lab-staff.png)
-
 ## Mobility (MIM and WIP) - Enrolling a VM: How to enroll Windows 11
 
 ![VM Setup](05-vm-setup.png)
-
-## One issue I ran into: I accidentally originally downloaded Windows 11 Home, not Pro. Home version does not support device mobility policies.
+## One issue I ran into: 
+- I accidentally originally downloaded Windows 11 Home, not Pro. Home version does not support device mobility policies.
 ## Register VM with Windows 11; on a Windows 11 Pro or Enterprise VM (the free evaluation ISO works), open Settings > Accounts > Access work or school > Connect > Join this device to Microsoft Entra ID, and signed in as a test user. 
+![entra](06-windows11-entra.png)
+
+![further setup](07-win11pro-setup.png)
+##	Adding new Win11Pro device to Entra. Chose to add stest[@]g3cisrac.onmicrosoft.com:
+This issue took quite a while to resolve. Another challenge was the original test user was enrolled in the Windows 11 Home VM which didn’t work, I deleted it, and once I deleted the VM I was not allowed to use the same email to enroll through a different VM, since that Windows 11 Home  enrollment was still pending. Changing test users solved the problem, as I used the above email for “Staff Test.”
+After a “Keep your account secure” prompt, clicking continue led to this error. This did not matter as the VM was already enrolled in Entra.
+
+![entra setup](08-win11pro-entra.png)
+![error](09-badrequesterror.png)
+## Next I pushed a configuration profile. Devices > Configuration > Create > New policy > Windows 10 and later > Settings catalog. Start by going to Intune. As we can see, Windows11P the VM is enrolled and currently compliant.
+
+![properties](10-windows11p-properties.png)
+![intune url](11-intune-url.png)
+![intune devices overview](12-intune-devices.png)
+## Below, I select Create Policy
+
+![createpolicy](13-create-policy.png)
+## Then, named the compliance policy. Now I will select one setting I can see on the VM. 
+## View the completed info on the compliance policy before creating.
+
+![name compliance policy](14-name-compliance-policy.png)
+![policy parameters](15-policy-parameters.png)
+## The policies I changed are all listed under “Compliance settings” above. I chose these because they will be seen in the VM first. At first there was no visible policy change or compliant/non-compliant devices. I fixed this in Intune, ensured I could sync this policy to the VM. It took 15-20 mins.
+
+![sync](16-sync.png)
+## In the meantime, jumped ahead a bit, creating a configuration profile to mandate a screen timeout. I made it a 300 second timeout. 
+
+![settings catalog](17-settings-catalog.png)
+![configure name/description](18-config-name-description.png)
+![device timeout](19-device-timeout.png)
+![all devices checked](20-all-devices-checked.png)
+## Screen will now lock after 5 mins. 
+
+![vm locked](22-vm-locked.png)
+## Here it shows my VM is compliant with the parameters I set earlier. I waited around 20 mins for this to populate in Intune. Good to know that when dealing with the compliance status, you have to give it time to catch up. Same with many other cloud based policies. Patience with these is important. 
+
+![Finished Policy](21-finished-policy.png)
+
+![compliance screen](23-compliance-1.png)
+
+## Create an app to deploy in Intune
+![newapp](24-create-new-app.png)
+![in terminal](25-win-terminal.png)
+![firewall settings](26-firewall.png)
+![firewall off](27-firewall-off.png)
+![noncompliant alert](28-noncompliant.png)
+![firewall on](29-firewall-on.png)
+![security recs](30-security-rec.png)
+![compliant device](31-compliant-device.png)
 
